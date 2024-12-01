@@ -49,18 +49,20 @@
 
 <div id="header" class="container-fluid">
     <div class="row">
-        <h1>Multimodal Prompting with Missing Modalities for Visual Recognition</h1>
+        <h1>Exemplar Masking for Multimodal Incremental Learning</h1>
         <div class="authors">
             <a href="https://yilunlee.github.io/" target="_blank">Yi-Lun Lee</a>, 
+            <a href="https://chl260.github.io/" target="_blank">Chen-Yu Lee</a>,
             <a href="https://sites.google.com/site/yihsuantsai/" target="_blank">Yi-Hsuan Tsai</a>, 
-            <a href="https://walonchiu.github.io/" target="_blank">Wei-Chen Chiu</a>, 
-            <a href="https://chl260.github.io/" target="_blank">Chen-Yu Lee</a>
+            <a href="https://walonchiu.github.io/" target="_blank">Wei-Chen Chiu</a> 
             <!-- <center>(* denotes equal contribution)</center> -->
 
             <p style="text-align:center;">
                 National Yang Ming Chiao Tung University, Taiwan
                 <br> 
                 Google, USA
+                <br> 
+                Atmanity, USA
                 <!-- <a href="http://nthu-en.web.nthu.edu.tw/bin/home.php" target="_blank"><img src="./ACCV2018/nthu_logo.png" height="150"></a> -->
                 <!-- &emsp; -->
             </p>
@@ -73,7 +75,7 @@
 		<div class="mx-auto">
 			<ul class="nav navbar-center">
 				<li class="nav-item text-center" style="display: inline-block;">
-					<a href="https://github.com/YiLunLee/Missing_aware_prompts" class="nav-link">
+					<a href="https://github.com/YiLunLee/Exemplar_Masking_MCIL" class="nav-link">
 						<svg style="width:50px;height:50px;" viewBox="0 0 16 16">
 							<path fill="currentColor" d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
   							<path fill="currentColor" d="M4.5 12.5A.5.5 0 0 1 5 12h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 10h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm1.639-3.708 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V8.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V8s1.54-1.274 1.639-1.208zM6.25 6a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z"/>
@@ -81,14 +83,14 @@
 						Paper
 					</a>
 				<li class="nav-item text-center" style="display: inline-block;">
-					<a href="https://github.com/YiLunLee/Missing_aware_prompts" class="nav-link">
+					<a href="https://github.com/YiLunLee/Exemplar_Masking_MCIL" class="nav-link">
 						<svg style="width:50px;height:50px" viewBox="0 0 16 16">
 							<path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
 						</svg><br>
 						Code
 					</a>
                 <li class="nav-item text-center" style="display: inline-block;">
-                    <a href="https://openaccess.thecvf.com/content/CVPR2023/supplemental/Lee_Multimodal_Prompting_With_CVPR_2023_supplemental.pdf" class="nav-link">
+                    <a href="https://github.com/YiLunLee/Exemplar_Masking_MCIL" class="nav-link">
                         <svg style="width:50px;height:50px;" viewBox="0 0 16 16">
                             <path fill="currentColor" d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
                             <path fill="currentColor" d="M4.5 12.5A.5.5 0 0 1 5 12h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 10h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm1.639-3.708 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V8.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V8s1.54-1.274 1.639-1.208zM6.25 6a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z"/>
@@ -106,7 +108,7 @@
 
     <h2>Abstract</h2>
     <p style="text-align: justify;">
-    In this paper, we tackle two challenges in multimodal learning for visual recognition: 1) when missing-modality occurs either during training or testing in real-world situations; and 2) when the computation resources are not available to finetune on heavy transformer models. To this end, we propose to utilize prompt learning and mitigate the above two challenges together. Specifically, our modality-missing-aware prompts can be plugged into multimodal transformers to handle general missing-modality cases, while only requiring less than 1% learnable parameters compared to training the entire model. We further explore the effect of different prompt configurations and analyze the robustness to missing modality. Extensive experiments are conducted to show the effectiveness of our prompt learning framework that improves the performance under various missing-modality cases, while alleviating the requirement of heavy model re-training.
+    Multimodal incremental learning needs to digest the information from multiple modalities while concurrently learning new knowledge without forgetting the previously learned information. There are numerous challenges for this task, mainly including the larger storage size of multimodal data in exemplar-based methods and the computational requirement of finetuning on huge multimodal models. In this paper, we leverage the parameter-efficient tuning scheme to reduce the burden of fine-tuning and propose the exemplar masking framework to efficiently replay old knowledge. Specifically, the non-important tokens are masked based on the attention weights and the correlation across different modalities, significantly reducing the storage size of an exemplar and consequently saving more exemplars under the same memory buffer. Moreover, we design a multimodal data augmentation technique to diversify exemplars for replaying prior knowledge. In experiments, we not only evaluate our method in existing multimodal datasets but also extend the ImageNet-R dataset to a multimodal dataset as a real-world application, where captions are generated by querying multimodal large language models (e.g., InstructBLIP). Extensive experiments show that our exemplar masking framework is more efficient and robust to catastrophic forgetting under the same limited memory buffer.
     </p>
 
 </div>
@@ -121,7 +123,7 @@
 
     <h3>Quantitative Results</h3>
     <img src="static/fig/quantitative_results.png" width="100%">
-    <center><p>Results on the MM-IMDb, UPMC Food-101, Hateful Memes dataset with different missing rates under different missing-modality scenarios.</p></center>
+    <center><p>Results.</p></center>
 
     <!-- <h3>Generation</h3>
     <img src="static/fig/sample.jpg" width="100%">
