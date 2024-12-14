@@ -43,7 +43,6 @@ This code is based on [ViLT](https://github.com/dandelin/ViLT.git).
 
 ## Citation
 If you find this work useful for your research, please cite:
-
 ```Bibtex
 @article{lee2024exemplarmasking,
   title={Exemplar Masking for Multimodal Incremental Learning},
