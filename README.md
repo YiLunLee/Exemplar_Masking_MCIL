@@ -1,5 +1,5 @@
 # Exemplar Masking for Multimodal Incremental Learning
-Official PyTorch implementaton of paper "[Exemplar Masking for Multimodal Incremental Learning](none)".  
+Official PyTorch implementaton of paper "[Exemplar Masking for Multimodal Incremental Learning](https://arxiv.org/abs/2412.09549)".  
 You can visit our project website [here](https://yilunlee.github.io/Exemplar_Masking_MCIL/).
 
 ## Introduction
@@ -43,6 +43,17 @@ This code is based on [ViLT](https://github.com/dandelin/ViLT.git).
 
 ## Citation
 If you find this work useful for your research, please cite:
+
+```Bibtex
+@article{lee2024exemplarmasking,
+  title={Exemplar Masking for Multimodal Incremental Learning},
+  author={Yi-Lun Lee and Chen-Yu Lee and Wei-Chen Chiu and Yi-Hsuan Tsai},
+  journal={arXiv preprint arXiv:2412.09549},
+  year={2024}
+}
+```
+
+
 <!-- ```Bibtex
 @inproceedings{lee2021bmvc,
  title = {Learning to Hide Residual for Boosting Image Compression},
